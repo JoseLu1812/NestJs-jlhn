@@ -94,8 +94,13 @@ export class MonumentosService {
 
   update(id: number, updateMonumentoDto: UpdateMonumentoDto) {
     if(id === 1 && updateMonumentoDto){
-            
-    }
+      let l = this.findOne(id);
+
+      for(let f of this.lista){
+        if(f == l){
+          f = l;
+        }
+    }}
     throw new HttpException(
       'El monumento no se ha actualizado', 
       HttpStatus.INTERNAL_SERVER_ERROR,
