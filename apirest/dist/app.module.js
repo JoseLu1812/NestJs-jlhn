@@ -10,15 +10,14 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const monuments_controller_1 = require("./monuments/monuments.controller");
-const monuments_service_1 = require("./monuments/monuments.service");
+const monumentos_module_1 = require("./monumentos/monumentos.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
-        controllers: [app_controller_1.AppController, monuments_controller_1.MonumentsController],
-        providers: [app_service_1.AppService, monuments_service_1.MonumentsService],
+        imports: [monumentos_module_1.MonumentosModule],
+        controllers: [app_controller_1.AppController],
+        providers: [app_service_1.AppService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
